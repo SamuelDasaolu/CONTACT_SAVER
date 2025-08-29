@@ -16,4 +16,3 @@ workspace_path = Path("WORKSPACE_FILES")
 workspace_path.mkdir(exist_ok=True)
 file_path = workspace_path / 'contacts.csv'
 
-'''sadjhgsad'''
