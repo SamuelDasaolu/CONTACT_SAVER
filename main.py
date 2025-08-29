@@ -119,6 +119,7 @@
 from pathlib import Path
 # from participant_pkg.file_ops import save_participant, load_participants
 
+<<<<<<< HEAD
 csv_path = Path("contacts.csv")
 
 while True:
@@ -155,3 +156,9 @@ participants = load_participants(csv_path)
 print(f"\nTotal participants saved: {len(participants)}")
 for p in participants:
     print(p)
+=======
+workspace_path = Path("WORKSPACE_FILES")
+workspace_path.mkdir(exist_ok=True)
+file_path = workspace_path / 'contacts.csv'
+
+>>>>>>> 0b9257d963645b79571c63b3a1ad95a19e9fb41b
