@@ -10,7 +10,6 @@ allow for multiple participants etc
 """
 from pathlib import Path
 from participant_pkg.file_ops import load_participants, save_participant
-from participant_pkg import file_ops
 from participant_pkg.helper import get_age, get_phone,get_track,get_name
 
 
@@ -42,7 +41,7 @@ while True:
         break
 
     
-file_ops.save_participant(file_path, participants)
+save_participant(file_path, participants)
 print(f"Saved: {participant}")
 
 
@@ -52,8 +51,3 @@ print(f"\nTotal participants saved: {len(participants)}")
 for index, participant in enumerate(participants):
     print(f"No {index+1},: {participant}")
   
-
-
-
-
-
