@@ -3,7 +3,6 @@ import csv
 import io
 
 
-test_data_type  = {'string'}
 def beautify_json_string(data, data_type ="string"):
     #JSON
     if data_type == "json":
