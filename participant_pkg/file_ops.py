@@ -33,17 +33,3 @@ def load_participants(file_path: Path) -> list:
     
     return participants
 
-
-workspace_path = Path("workspace_files")
-workspace_path.mkdir(exist_ok=True)
-file_path = workspace_path / 'contacts.csv'
-diction = [{
-    'name': 'sadasd sadads',
-    'age': 23,
-    'phone': '324324 234',
-    'track': 'Ai sadads',
-}
-]
-save_participant(file_path, diction)
-for n, row in enumerate(load_participants(file_path)):
-    print(f"No {n}: {row}")
