@@ -10,9 +10,8 @@ allow for multiple participants etc
 """
 
 from pathlib import Path
-from participant_pkg.file_ops import load_participants, save_participant
+from participant_pkg.file_ops import save_participant
 
 workspace_path = Path("WORKSPACE_FILES")
 workspace_path.mkdir(exist_ok=True)
 file_path = workspace_path / 'contacts.csv'
-
