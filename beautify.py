@@ -1,7 +1,6 @@
-def beautify(string, tab = True) -> str:
+def beautify(string) -> str:
     lines = string.splitlines()
-    if tab == False:
-        return "\n".join(line + "\n" for line in lines)
+    return "\n".join(line + "\n" for line in lines)
     
 
 print(beautify(string="My name is Simeon."))
