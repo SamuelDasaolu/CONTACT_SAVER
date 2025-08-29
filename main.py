@@ -15,9 +15,3 @@ from participant_pkg.file_ops import save_participant
 workspace_path = Path("WORKSPACE_FILES")
 workspace_path.mkdir(exist_ok=True)
 file_path = workspace_path / 'contacts.csv'
-
-participant_dict ={
-    
-}
-# load_participants()
-save_participant(file_path, participant_dict)
