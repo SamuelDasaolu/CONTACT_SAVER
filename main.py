@@ -8,29 +8,50 @@ details = {name, age, phone, track}
 allow for multiple participants etc
 
 """
-
 from pathlib import Path
 from participant_pkg.file_ops import load_participants, save_participant
+from participant_pkg import file_ops
+from participant_pkg.helper import get_age, get_phone,get_track,get_name
+
 
 workspace_path = Path("WORKSPACE_FILES")
 workspace_path.mkdir(exist_ok=True)
 file_path = workspace_path / 'contacts.csv'
-from participant_pkg.helper import get_age, get_phone,get_track,get_name
+participants = []
 
 while True:
-    name = get_name
-    age = get_age
-    phone_number= get_phone
-    track=get_track
-    # again = input("Add another participant? (y/n): ").lower()
-    # if again != "y":
-    #     break
+    try:
+        name = get_name()
+        age = get_age()
+        phone_number= get_phone()
+        track=get_track()
+        participant = {
+            "name": name, 
+            "age": age, 
+            "phone": phone_number, 
+            "track": track
+             }
+        participants.append(participant)
 
-# After loop → show all participants
-participants = load_participants(csv_path)
+        again = input("Add another participant? (y/n): ").lower()
+        if again == "y":
+            continue
+        break
+    except Exception as e:
+        print(f"An error occured while processing details {e}")
+        break
+
+    
+file_ops.save_participant(file_path, participants)
+print(f"Saved: {participant}")
+
+
+# After loop show all participants
+participants = load_participants(file_path)
 print(f"\nTotal participants saved: {len(participants)}")
-for p in participants:
-    print(p)
+for index, participant in enumerate(participants):
+    print(f"No {index+1},: {participant}")
+  
 
 
 
